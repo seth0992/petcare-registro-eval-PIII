@@ -54,7 +54,8 @@ class ctr_Mascota {
         
         // Insertar mascota en la base de datos
         if ($this->mascotaData->insert_mascota($mascotaData)) {
-            cls_Message::show_message("Mascota registrada correctamente", "success", "success_insert");
+            // No mostrar el mensaje aquí, deja que la vista lo maneje después
+            // cls_Message::show_message("Mascota registrada correctamente", "success", "success_insert");
             return true;
         }
         

@@ -11,9 +11,13 @@ $registro_exitoso = false;
 if (isset($_POST['btn_save'])) {
     $registro_exitoso = $ctr_Mascota->btn_save_click();
     if ($registro_exitoso) {
+        // Mostrar mensaje de éxito antes de la redirección
+        cls_Message::show_message("Mascota registrada correctamente", "success", "success_insert");
+        
         // Recargar la página para evitar reenvío del formulario
+        // Usar exit después del header para asegurar que se detiene la ejecución
         header('Location: ' . __SITE_PATH__ . '?registrado=true');
-        exit;
+        exit; // Importante: detiene la ejecución de código
     }
 }
 ?>
